@@ -1,0 +1,84 @@
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Game Timer</title>
+
+<!-- meta tags -->
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link href="css/styles.css"  type="text/css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<!-- javascript -->
+</head>
+<body>
+	<div id="container">
+		<div>
+			<div id="clock"></div>
+		</div>
+		<div class="controls">
+			<input type="button" id="startClock" onClick="startClock()" value="Start Clock"/> 
+		    <input type="button" id="stopClock" onClick="stopClock()" value="Stop Clock"/>
+		   	<input type="button" id="stopClock" onClick="resetClock()" value="Reset Clock"/>
+	   </div>
+	   <div id="doc">
+			<h2>How to use:</h2>
+			<p>
+				<ol>
+					<li>Use gameclock.js:<br/><code>&lt;script  type=&quot;text/javascript&quot;  src=&quot;js/gameclock.js&quot;&gt;&lt;/script&gt;</code></li>
+					<li>Create an instance of the clock:
+						<code><pre>
+var clock = new Clock({
+	time:9000,
+	displayEL:'clock',
+	stopAferTimeout:true,
+	resetAfterTimeout:false,
+	timeoutCallBack:stopme
+});</pre></code>
+					<li>Start The clock: <code><pre>clock.StartClock();</pre></code> </li>
+					<li>Stop The clock: <code><pre>clock.StopClock();</pre></code> </li>
+					<li>Rest The clock: <code><pre>clock.ResetClock();</pre></code> </li>
+					<li>Configuration:
+						<ul>
+							<li>displayEL: The display element. This will display the current state of the clock in a element.</li>
+							<li>time: The amount of time for the game.</li>
+							<li>stopAferTimeout: If true, will stop at zero. If false, will contine to display a negative time.</li>
+							<li>resetAfterTimeout: If true, will reset the clock to the "time" value and continue to countdown.</li>
+							<li>timeoutCallBack: A callback function that will fire when the clock reaches zero.</li>
+
+						</ul>
+
+				</ol>
+			</p>
+	   </div>
+	</div>
+
+
+
+	<script src="js/gameclock.js"></script>
+	<script>
+		var stopme = function(){
+			alert('Game Over!');
+		}
+		var clock = new Clock({
+			time:9000,
+			displayEL:'clock',
+			stopAferTimeout:true,
+			resetAfterTimeout:false,
+			timeoutCallBack:stopme
+		});
+		function stopClock(){
+		    clock.StopClock();
+		}
+		function startClock(){
+		   clock.StartClock(); 
+		}
+		function resetClock(){
+		   clock.ResetClock(); 
+		}
+	</script>
+
+
+	<footer>
+	
+	</footer>
+</body>
+</html>
