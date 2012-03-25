@@ -12,5 +12,30 @@ gameclock.js is a javascript library that can be used to create a timer/clock fo
 
 A step by step guide on how to use gameclock.js:
 
+ * Use gameclock.js:
+	<script type="text/javascript" src="js/gameclock.js"></script>
+ * Create an instance of the clock:
+	var clock = new Clock({
+		time:9000,
+		displayEL:'clock',
+		stopAferTimeout:true,
+		resetAfterTimeout:false,
+		timeoutCallBack:stopme
+	});
+	Start The clock:
+	clock.StartClock();
+	Stop The clock:
+	clock.StopClock();
+	Rest The clock:
+	clock.ResetClock();
 
-## Demo's
+
+
+
+
+## Configuration:
+ * displayEL: The display element. This will display the current state of the clock in a element.
+ * time: The amount of time for the game.
+ * stopAferTimeout: If true, will stop at zero. If false, will contine to display a negative time.
+ * resetAfterTimeout: If true, will reset the clock to the "time" value and continue to countdown.
+ * timeoutCallBack: A callback function that will fire when the clock reaches zero.
