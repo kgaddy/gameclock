@@ -1,14 +1,20 @@
 var Clock = function(config) {
-		console.dir(config);
+
 		var clock = this;
 		var time = config.time,
 			remainingTime = time,
-			qClock, minutes = 0,
+			qClock,
+			minutes = 0,
 			resetAfterTimeout = true,
 			stopAferTimeout = true,
 			seconds = 0,
-			timeoutCallBack,
+			start_time_1,
+			start_time_2,
+			now,
+			timeoutCallBack, 
 			resume = true;
+
+
 		assignUSerSettings();
 		displayClock();
 
@@ -22,7 +28,7 @@ var Clock = function(config) {
 				stopAferTimeout = config.stopAferTimeout;
 			}
 
-			if(config.timeoutCallBack!=null){
+			if (config.timeoutCallBack != null) {
 				timeoutCallBack = config.timeoutCallBack;
 			}
 
@@ -40,18 +46,21 @@ var Clock = function(config) {
 						resume = false;
 					}
 
-					if(timeoutCallBack!=null){
+					if (timeoutCallBack != null) {
 						timeoutCallBack();
 					}
 				}
 				if (resume === true) {
-					remainingTime = remainingTime - 1000;
+					now = (new Date()).getTime();
+					seconds_elapsed = (now - start_time_2);
+					remainingTime = Math.round(start_time_1 / 1000) - Math.round(seconds_elapsed/ 1000);
+					remainingTime = remainingTime * 1000;
 					displayClock();
 				}
 			}
 		}
-		//The actual calculation that converts the milliseconds to a mm:ss  and assigns to DOM
 
+		//The actual calculation that converts the milliseconds to a mm:ss  and assigns to DOM
 		function displayClock() {
 			minutes = Math.floor(remainingTime / 1000 / 60);
 			seconds = Math.floor(remainingTime / 1000) % 60;
@@ -66,7 +75,9 @@ var Clock = function(config) {
 		}
 		//Starts the clock
 		this.StartClock = function() {
-			resume=true;
+			start_time_2 = (new Date()).getTime();
+			start_time_1=remainingTime;
+			resume = true;
 			qClock = setInterval(function() {
 				calculateTime();
 			}, 1000);
