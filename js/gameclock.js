@@ -15,11 +15,11 @@ var Clock = function(config) {
 			resume = true;
 
 
-		assignUSerSettings();
+		assignUserSettings();
 		displayClock();
 
 
-		function assignUSerSettings() {
+		function assignUserSettings() {
 			if (config.resetAfterTimeout != null) {
 				resetAfterTimeout = config.resetAfterTimeout;
 			}
