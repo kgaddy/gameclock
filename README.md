@@ -30,8 +30,6 @@ A step by step guide on how to use gameclock.js:
 	Rest The clock:
 	clock.ResetClock();
 
-
-
 ```
 
 ## Configuration:
