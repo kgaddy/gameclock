@@ -15,7 +15,7 @@ A step by step guide on how to use gameclock.js:
  * Use gameclock.js:
 	<script type="text/javascript" src="js/gameclock.js"></script>
  * Create an instance of the clock:
- ```
+```
 	var clock = new Clock({
 		time:9000,
 		displayEL:'clock',
