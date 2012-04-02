@@ -13,14 +13,9 @@ gameclock.js is a javascript library that can be used to create a timer/clock fo
 A step by step guide on how to use gameclock.js:
 
 * Use gameclock.js:
-```
-<script type="text/javascript" src="js/gameclock.js"></script>
-```
 
 ```
-$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<script type="text/javascript" src="js/gameclock.js"></script>
 ```
 
 
@@ -34,13 +29,15 @@ var clock = new Clock({
 	resetAfterTimeout:false,
 	timeoutCallBack:stopme
 });
-	Start The clock:
-	clock.StartClock();
-	Stop The clock:
-	clock.StopClock();
-	Rest The clock:
-	clock.ResetClock();
+Start The clock:
+clock.StartClock();
+Stop The clock:
+clock.StopClock();
+Reset The clock:
+clock.ResetClock();
 ```
+
+
 
 ## Configuration:
  * displayEL: The display element. This will display the current state of the clock in a element.
