@@ -14,8 +14,17 @@ A step by step guide on how to use gameclock.js:
 
 * Use gameclock.js:
 ```
-	<script type="text/javascript" src="js/gameclock.js"></script>
+<script type="text/javascript" src="js/gameclock.js"></script>
 ```
+
+```
+$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+```
+
+
+
 * Create an instance of the clock:
 ```
 var clock = new Clock({
