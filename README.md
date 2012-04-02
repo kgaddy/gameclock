@@ -29,6 +29,7 @@ var clock = new Clock({
 	resetAfterTimeout:false,
 	timeoutCallBack:stopme
 });
+
 Start The clock:
 clock.StartClock();
 Stop The clock:
