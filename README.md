@@ -19,12 +19,12 @@ A step by step guide on how to use gameclock.js:
 * Create an instance of the clock:
 ```
 var clock = new Clock({
-		time:9000,
-		displayEL:'clock',
-		stopAferTimeout:true,
-		resetAfterTimeout:false,
-		timeoutCallBack:stopme
-	});
+	time:9000,
+	displayEL:'clock',
+	stopAferTimeout:true,
+	resetAfterTimeout:false,
+	timeoutCallBack:stopme
+});
 	Start The clock:
 	clock.StartClock();
 	Stop The clock:
