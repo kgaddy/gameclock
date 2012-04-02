@@ -21,6 +21,7 @@ A step by step guide on how to use gameclock.js:
 
 
 * Create an instance of the clock:
+
 ```
 var clock = new Clock({
 	time:9000,
