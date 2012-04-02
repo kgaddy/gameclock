@@ -30,12 +30,12 @@ var clock = new Clock({
 	timeoutCallBack:stopme
 });
 
-Start The clock:
-clock.StartClock();
-Stop The clock:
-clock.StopClock();
-Reset The clock:
-clock.ResetClock();
+	Start The clock:
+	clock.StartClock();
+	Stop The clock:
+	clock.StopClock();
+	Reset The clock:
+	clock.ResetClock();
 ```
 
 
