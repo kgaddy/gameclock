@@ -32,7 +32,6 @@ var Clock = function(config) {
 		function calculateTime() {
 			if (resume === true) {
 				if (remainingTime <= 0) {
-					console.log('a');
 					if (resetAfterTimeout === true) {
 						clock.ResetClock();
 						resume = true;
