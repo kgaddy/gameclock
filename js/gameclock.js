@@ -2,12 +2,14 @@ var Clock = function(config) {
 		var clock = this;
 		var time = config.time,
 			remainingTime = time,
+			countDown=true,
 			qClock, minutes = 0,
 			resetAfterTimeout = true,
 			stopAferTimeout = true,
 			seconds = 0,
-			timeoutCallBack, on = false;
-		resume = true;
+			timeoutCallBack, 
+			on = false,
+			resume = true;
 		assignUserSettings();
 		displayClock();
 
@@ -27,27 +29,38 @@ var Clock = function(config) {
 			if (config.timeoutCallBack != null) {
 				timeoutCallBack = config.timeoutCallBack;
 			}
+			if(config.time===0){
+				countDown=false;
+				topAferTimeout = false;
+			}
 		}
 
 		function calculateTime() {
 			if (resume === true) {
-				if (remainingTime <= 0) {
-					if (resetAfterTimeout === true) {
-						clock.ResetClock();
-						resume = true;
-					}
-					if (stopAferTimeout === true) {
-						clock.StopClock();
-						resume = false;
-					}
+				if(countDown===true){
+					if (remainingTime <= 0) {
+						if (resetAfterTimeout === true) {
+							clock.ResetClock();
+							resume = true;
+						}
+						if (stopAferTimeout === true) {
+							clock.StopClock();
+							resume = false;
+						}
 
-					if (timeoutCallBack != null) {
-						timeoutCallBack();
+						if (timeoutCallBack != null) {
+							timeoutCallBack();
+						}
 					}
 				}
-				if (resume === true) {
 
-					remainingTime = remainingTime - 1000;
+				if (resume === true) {
+					if(countDown===true){
+						remainingTime = remainingTime - 1000;
+					}
+					else{
+						remainingTime = remainingTime + 1000;
+					}					
 					displayClock();
 				}
 			}
